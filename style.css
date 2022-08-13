@@ -46,13 +46,15 @@ body {
 .tall-70 { min-height: 70vh; }
 .tall-80 { min-height: 80vh; }
 .tall-90 { min-height: 90vh; }
-
+.tall-100 { min-height: 100vh; }
 
 
 .padded     {padding: 5%;}
 .padded-lg  {padding: 10%;}
 .padded-1   {padding: 1rem;}
 .padded-2   {padding: 2rem;}
+
+.padded-0 { padding: 0;}
 
 .margin-b-0 { margin-bottom: 0; }
 
@@ -66,7 +68,10 @@ body {
 .right { text-align: right; }
 
 
-
+.capped-width {
+    max-width: 1000px;
+    margin: auto;
+}
 
 
 /* Typography */
@@ -87,6 +92,8 @@ h2 { font-size: 2.5rem; }
 
 h3 { font-size: 1.8rem; }
 
+.text-xl { font-size: 8rem;}
+
 .not-bold { font-weight: 400;
 }
 
@@ -95,7 +102,6 @@ h3 { font-size: 1.8rem; }
     font-size: 0.9rem;
     font-style: italic;
 }
-
 
 
 
@@ -122,6 +128,76 @@ a:hover { color: #4e91ad;}
     padding-left: 1rem;
 }
 
+
+
+/* Header & Hamburger menu */
+
+header {
+    padding: 1% 5%;
+    position: relative;
+}
+
+
+.hamburger-button {
+    cursor: pointer;
+    padding: 0 0.5rem;
+    display: inline-block;
+    font-weight: 200;
+    font-size: 2.5rem;
+    line-height: 0.8;
+    position: fixed;
+    right: 1rem;
+    top: 0.5rem;
+    z-index: 2;
+}
+
+
+/* Styles when the hamburger button is active */
+
+.logo {
+    font-size: 2rem;
+    font-weight: normal;
+    letter-spacing: 0.05em;
+    margin-bottom: 0;
+
+}
+
+header a { 
+    text-decoration: none;
+    color: inherit;
+    padding: 0.5rem;
+    display: inline-block;
+    font-weight: 200;
+}
+
+.hamburger-button.active {
+    color: white;
+}
+
+
+.mobile-menu {
+    display: none;
+    background-color: #24282B;
+    padding: 5%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+
+.mobile-menu a {
+    text-decoration: none;
+    color: white;
+    padding: 5vh 5%;
+    display: block;
+    font-weight: normal;
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
 
 
 /* Footer */ 
@@ -165,14 +241,57 @@ footer p { margin-bottom: 0.2rem; }
 
 
 
+
+.embed-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Explore Page */
+
+.explore-page h1 {
+    margin-bottom: 1rem;
+}
+
+
+.explore-page a {
+    display: block;
+    padding: 0.5rem 0.5rem;
+    border: 1px solid ;
+    margin-bottom: 0.5rem;
+}
+
+.explore-page .featured {
+    background-color: tan;
+    color: #24282B;
+}
+
+
+
 /* max-width in pixels approximately 768px */
 
 @media(max-width: 48em) {
-    .hide.sm { display: none; }
+    .hide-sm { display: none; }
+    .show-sm { display: block; }
 
     .flex-flip-sm { flex-direction: column-reverse;}
 
     h1 { font-size: 4rem;}
+   .text-xl {font-size: 4rem;}
 
     footer h2 { font-size: 3rem;}
 
