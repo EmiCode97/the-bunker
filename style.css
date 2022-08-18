@@ -119,8 +119,13 @@ li:last-child {
 
 a { color: inherit; }
 
-nav a { text-decoration: none; }
-
+nav a { 
+        text-decoration: none;
+        padding: 0.5rem;
+        display: inline-block;
+        border: none;
+      }
+     
 a:hover { color: #4e91ad;}
 
 .fab {
@@ -138,18 +143,7 @@ header {
 }
 
 
-.hamburger-button {
-    cursor: pointer;
-    padding: 0 0.5rem;
-    display: inline-block;
-    font-weight: 200;
-    font-size: 2.5rem;
-    line-height: 0.8;
-    position: fixed;
-    right: 1rem;
-    top: 0.5rem;
-    z-index: 2;
-}
+
 
 
 /* Styles when the hamburger button is active */
@@ -159,6 +153,7 @@ header {
     font-weight: normal;
     letter-spacing: 0.05em;
     margin-bottom: 0;
+    text-decoration: none;
 
 }
 
@@ -168,36 +163,72 @@ header a {
     padding: 0.5rem;
     display: inline-block;
     font-weight: 200;
-}
-
-.hamburger-button.active {
-    color: white;
+    
 }
 
 
-.mobile-menu {
+
+/* hamburger menu */
+
+.hamburger-button::after {
+    content: "☰";
+    cursor: pointer;
+    padding: 0 0.5rem;
+    display: inline-block;
+    font-weight: 200;
+    font-size: 2.5rem;
+    line-height: 0.8;
+    margin-top: 0.9rem;
+    position: absolute;
+    right: 1rem;
+    top: 2.1rem;
+    z-index: 6;
+  }
+  
+  .hamburger-button.active::after {
+    content: "x";
+    color: black;
+  }
+  
+  .mobile-menu {
     display: none;
-    background-color: #24282B;
+    background-color: #e0fbfc;
     padding: 5%;
     position: fixed;
+    right: 0;
     top: 0;
     bottom: 0;
     left: 0;
-    right: 0;
     text-align: center;
-}
-
-
-.mobile-menu a {
+    z-index: 5;
+  }
+  
+  .mobile-menu a {
     text-decoration: none;
-    color: white;
+    color: inherit;
     padding: 5vh 5%;
     display: block;
     font-weight: normal;
-    font-size: 1.5rem;
-    font-weight: 900;
-    text-transform: uppercase;
-}
+    font-size: 0.8rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
+  
+  .inline, .mobile-menu .inline {
+    display: inline;
+    margin-top: 3%;
+    
+  }
+  
+  .social-links a { display: inline;}
+  
+  
+  
+ 
+ 
+
+
+
 
 
 /* Footer */ 
@@ -282,6 +313,71 @@ footer p { margin-bottom: 0.2rem; }
 
 
 
+
+
+/* hamburger menu 
+
+.hamburger-button::after {
+    content: "☰";
+    cursor: pointer;
+    padding: 0 0.5rem;
+    display: inline-block;
+    font-weight: 200;
+    font-size: 2.5rem;
+    line-height: 0.8;
+    margin-top: 0.9rem;
+    position: absolute;
+    right: 1rem;
+    top: 2.1rem;
+    z-index: 6;
+  }
+  
+  .hamburger-button.active::after {
+    content: "x";
+    color: black;
+  }
+  
+  .mobile-menu {
+    display: none;
+    background-color: #e0fbfc;
+    padding: 5%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    z-index: 5;
+  }
+  
+  .mobile-menu a {
+    text-decoration: none;
+    color: inherit;
+    padding: 5vh 5%;
+    display: block;
+    font-weight: normal;
+    font-size: 0.8rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
+  
+  .inline, .mobile-menu .inline {
+    display: inline;
+    margin-top: 3%;
+    
+  }
+  
+  .social-links a { display: inline;}
+  
+
+*/
+
+
+
+
+
+
+
 /* max-width in pixels approximately 768px */
 
 @media(max-width: 48em) {
@@ -302,3 +398,116 @@ footer p { margin-bottom: 0.2rem; }
     }
 
 }
+
+
+
+/* General CSS Responsive Styles (Apply everywhere unless overridden) */ 
+ 
+.show-xs, 
+.show-sm,
+.show-md 
+.mobile-menu {
+   display: none;
+}
+/* Default Responsive Styles (Desktop and below) */
+
+.mob-show {
+  display: none;
+}
+
+ 
+
+
+
+/* ------- SM Media Query (48em / 768px) --------------- */ 
+@media(max-width:48em) {
+  .hide-sm { display: none; }
+  .show-sm { display: block; }
+}
+
+
+
+
+/* ------- MD Media Query (64em / 1024px) --------------- */ 
+/* - Styles added here will apply at devices smaller than 576px, or zoomed in equivalent */ 
+
+@media (max-width: 64em) {
+  .show-md { display: block; }
+  .hide-md { display: none;  }
+}
+
+
+
+/* - Styles added here will apply at devices smaller than 768px, or zoomed in equivalent */ 
+
+    
+  .sm-text-center { text-align: center; }
+  .sm-text-left { text-align: left; }
+  .sm-text-right { text-align: right; }
+
+  .sm-padded { padding: 5%; }
+  .sm-padded-1 { padding: 1rem; }
+  .sm-padded-05 { padding: 0.5rem; }
+
+  .sm-padded-t-0 { padding-top: 0; }
+  .sm-padded-b-0 { padding-bottom: 0; }
+  .sm-padded-l-0 { padding-left: 0; }
+  .sm-padded-r-0 { padding-right: 0; }
+  .padded-r-5 { padding-right: 5rem; }
+  
+  .sm-margin-t-0 { margin-top: 0; }
+  .sm-margin-b-0 { margin-bottom: 0; }
+  .sm-margin-l-0 { margin-left: 0; }
+  .sm-margin-r-0 { margin-right: 0; }
+
+
+
+
+/* ------- XS Media Query (36em / 576px) --------------- */ 
+/* - Styles added here will apply at devices smaller than 576px, or zoomed in equivalent */ 
+
+@media (max-width: 36em) {
+  .show-xs { display: block; }
+  .hide-xs { display: none;  }
+}
+
+
+
+.margin-bottom { margin-bottom: 2.5rem;}
+
+
+
+
+
+
+
+
+/* cookie banner */
+
+#cookie-notice {
+ padding: 0.5rem 1rem;
+ display: none;
+ text-align: center;
+ position: fixed;
+ left: 1rem;
+ right: 1rem;
+ bottom: 0;
+ width: calc(100% - 2rem);
+ background: #222;
+ color: rgba(255,255,255,0.8);
+}
+#cookie-notice a {
+ display: inline-block;
+ cursor: pointer;
+ margin-left: 0.5rem;
+}
+#cookie-notice .button-subtle {
+opacity: 0.8;
+}
+#close-cookie-banner {
+padding: 1rem;
+cursor: pointer;
+font-size: 0.8rem;
+opacity: 0.5
+}
+
